@@ -18,6 +18,16 @@ screen.tracer(0)#변경사항 적용하지마(그림이 안그려짐)
 y=통.ycor()
 print(y)
 
+#점수표시
+score=0
+score_display=turtle.Turtle()
+score_display.hideturtle()
+score_display.penup()
+score_display.goto(0, 260)
+score_display.color("black")
+score_display.write(f"점수: {score}", align="center",
+                    font=("Arial",24,"bold"))
+
 #쓰레기 리스트
 trashes=[]
 
@@ -59,6 +69,12 @@ def check_collision(trash):
         return True
     return False
 
+#점수 업데이트 함수
+def update_score():
+    global score
+    score_display.clear()
+    score_display.write(f"점수: {score}", 
+            align="center",font=("Arial",24,"bold"))
 
 screen.listen()
 screen.onkeypress(move_left,"Left")
@@ -77,7 +93,7 @@ while True:
         trash_spawn_timer=0
     
     
-    score=0
+    
     # 쓰레기 이동 및 충돌 (복사복으로 반복)
     for trash in trashes[:]:
         trash.sety(trash.ycor() - trash.speed)
@@ -87,14 +103,16 @@ while True:
             trashes.remove(trash)
             #점수처리-다음주에
             score += 10
-            print("점수: ",score)
+            #print("점수: ",score)
+            #점수판 변화
+            update_score()
 
         elif trash.ycor() < -300:
             trash.hideturtle()
             trashes.remove(trash)
 
 
-    time.sleep(0.02)
+    time.sleep(0.01)
 
 
 screen.update()
