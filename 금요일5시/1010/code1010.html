@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내가 만든 코드</title>
+    <link rel="stylesheet" href="code1010.css">
+</head>
+<body>
+    <h2>
+      <a href="/">HOME</a>
+    </h2>
+    <hr>
+    <h1>코드를 그대로 출력할꺼에요</h1>
+    <p>
+        &lt;pre&gt; 태그는 
+        <b>'preformatted text'</b>
+        의 줄임말로, HTML에서 미리 서식이 지정된 텍스트를
+        그래도 표시할 때 사용 합니다.
+    </p>
+    <div class="code-block">
+        <div class="code-header">
+            python
+        </div>
+        <pre>
+            <code>
+import turtle
+
+turtle.register_shape("0926/owl.gif")
+미켈란젤로=turtle.Turtle()
+미켈란젤로.shape("0926/owl.gif")
+#미켈란젤로.hideturtle()
+한변=300
+
+for _ in range(3):
+    미켈란젤로.forward(한변)
+    미켈란젤로.right(120)
+
+미켈란젤로.forward(한변/3)
+미켈란젤로.left(60)
+미켈란젤로.forward(한변/3)
+
+for _ in range(3):
+    미켈란젤로.right(120)
+    미켈란젤로.forward(한변)
+
+turtle.done()                
+            </code>
+        </pre>
+        <div class="run-img">
+
+        </div>
+    </div>
+</body>
+</html>

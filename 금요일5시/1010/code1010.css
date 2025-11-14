@@ -1,0 +1,24 @@
+/* class이름이 code-block 인 태그  */
+.code-block{
+    border:1px solid #ddd;
+    border-radius: 5px;
+}
+.code-header{
+    background-color: #333;
+    color: #fff;
+    padding: 8px 16px;
+}
+
+.code-block pre{
+    margin: 0;
+    background-color: #f0f0f0;
+    padding: 8px 16px;
+}
+.run-img{
+    width: 500px;
+    height: 500px;
+    background-image: url('실행화면.jpg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>나의 소개 홈페이지</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #a8edea, #fed6e3);
+      color: #333;
+    }
+
+    header {
+      background: #4caf50;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    header p {
+      margin: 0.5rem 0 0;
+      font-size: 1.2rem;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    section {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+    }
+
+    section h2 {
+      color: #4caf50;
+      margin-top: 0;
+    }
+
+    .highlight {
+      color: #ff5722;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      background: #4caf50;
+      color: white;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* 반응형 스타일 태블릿사이즈*/
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      section {
+        padding: 1rem;
+      }
+      main{
+        grid-template-columns: auto auto;
+        gap: 15px;
+      }
+    }
+    /* 모바일버전 */
+    @media (max-width: 480px) {
+      main{
+        grid-template-columns: auto;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h2>
+      <a href="/">HOME</a>
+      <a href="./code1010.html">파이썬</a>
+    </h2>
+    <hr>
+    <h1>안녕하세요! 저는 초등학교 6학년이에요 🌱</h1>
+    <p>식물을 좋아하고, <span class="highlight">로블록스</span> 게임을 제일 좋아해요 🎮</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>🌿 나의 관심사</h2>
+      
+      <p>저는 식물을 키우는 걸 좋아해요. 작은 씨앗이 자라서 예쁜 꽃이나 나무가 되는 게 신기하고 즐거워요.</p>
+      <img src="forest.jpg" width="100%">
+    </section>
+
+    <section>
+      <h2>🎮 내가 좋아하는 게임</h2>
+      <p>제가 제일 좋아하는 게임은 <span class="highlight">로블록스</span>예요. 친구들이랑 같이 놀고, 새로운 세상을 만들 수 있어서 정말 재밌어요!</p>
+      <img src="roblox.jpg" width="100%">
+    </section>
+
+    <section>
+      <h2>✨ 나의 꿈</h2>
+      <p>앞으로 코딩을 더 열심히 배워서 나만의 게임이나 멋진 웹사이트를 만들고 싶어요.</p>
+      <img src="coding.jpg" width="100%">
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 나의 소개 홈페이지</p>
+  </footer>
+</body>
+</html>

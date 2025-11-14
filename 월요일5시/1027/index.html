@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>멀티플레이어 클리커 게임</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #score {
+            font-size: 48px;
+            color: #4CAF50;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        #status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        #status.connected {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #status.disconnected {
+            background-color: #f44336;
+            color: white;
+        }
+
+        #gameCanvas {
+            border: 3px solid #333;
+            cursor: pointer;
+            background-color: white;
+            display: block;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        #info {
+            margin-top: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎮 멀티플레이어 클리커 게임</h1>
+
+    <div id="status" class="disconnected">연결 중...</div>
+
+    <div id="score">0</div>
+
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+    <div id="info">
+        <p>캔버스를 클릭하세요! 모든 플레이어의 클릭이 실시간으로 공유됩니다.</p>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
