@@ -38,7 +38,7 @@ def 쓰레기_생성():
     쓰레기_리스트.append(쓰레기)
 
 
-speed = 20
+speed = 40
 def 왼쪽이동():
     x = 통.xcor()#재활용통의 현재의 x좌표값 # x coordinate : x좌표 
     x = x - speed
