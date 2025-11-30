@@ -70,7 +70,7 @@ title_turtle.hideturtle()
 title_turtle.color("white")
 title_turtle.penup()
 title_turtle.goto(0, 150)
-title_turtle.write("♪ 떴다 떴다 비행기 ♪", align="center", font=("Arial", 24, "bold"))
+title_turtle.write("스페이스바를 눌러 연주를 시작하세요", align="center", font=("Arial", 20, "bold"))
 
 screen.update()  # 건반과 제목을 화면에 그림
 
@@ -86,27 +86,39 @@ def release_key(note):
         key_turtles[note].color(key_data[note][1]) # 원래 색(흰색)으로
 
 # 5. 연주 시작
-time.sleep(1)  # 1초 대기 후 시작
+def play_song():
+    title_turtle.clear()
+    title_turtle.write("♪ 연주 중...", align="center", font=("Arial", 24, "bold"))
+    screen.update()
 
-for note, duration in song:
-    if note == 'R':  # 'R'은 쉼표(Rest)
-        time.sleep(beat_ms * duration / 1000)
-        continue
+    for note, duration in song:
+        if note == 'R':  # 'R'은 쉼표(Rest)
+            time.sleep(beat_ms * duration / 1000)
+            continue
 
-    if note in key_turtles:
-        freq = notes_freq[note]      # 주파수
-        dur = int(beat_ms * duration) # 소리 길이 (ms)
-        
-        # 1. 건반 누름 (시각)
-        press_key(note)
-        screen.update()  # 화면 즉시 업데이트
-        
-        # 2. 소리 재생 (청각)
-        # winsound.Beep은 해당 시간(dur)만큼 프로그램 실행을 멈추고 소리를 재생
-        winsound.Beep(freq, dur) 
-        
-        # 3. 건반 뗌 (시각)
-        release_key(note)
-        screen.update()  # 화면 즉시 업데이트
-    
+        if note in key_turtles:
+            freq = notes_freq[note]      # 주파수
+            dur = int(beat_ms * duration) # 소리 길이 (ms)
+            
+            # 1. 건반 누름 (시각)
+            press_key(note)
+            screen.update()  # 화면 즉시 업데이트
+            
+            # 2. 소리 재생 (청각)
+            # winsound.Beep은 해당 시간(dur)만큼 프로그램 실행을 멈추고 소리를 재생
+            winsound.Beep(freq, dur) 
+            
+            # 3. 건반 뗌 (시각)
+            release_key(note)
+            screen.update()  # 화면 즉시 업데이트
+
+    #연주가 끝나면 안내글씨 표현
+    title_turtle.clear()
+    title_turtle.write("스페이스바를 눌러 연주를 시작하세요", align="center", font=("Arial", 20, "bold"))
+    screen.update()
+
+#키보드 이벤트 설정    
+screen.listen()
+screen.onkeypress(play_song, "space")
+
 turtle.done()
