@@ -7,5 +7,5 @@ img = Image.open("1113/alien.png")
 new_size=(100,100)
 img_resized=img.resize(new_size)
 
-img_resized.save("1113/alien.gif")
+img_resized.save("1113/alien100.png")
 print("파일변환 완료!")
