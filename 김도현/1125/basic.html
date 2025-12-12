@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>문서의 설정</title>
+        <!-- html 설정정보를 등록 설정할때사용 -->
+         <style>
+  /* 영상이 들어갈 컨테이너: 화면 뒤에 고정 */
+  .video-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -99; /* 컨텐츠보다 뒤에 배치 */
+    overflow: hidden;
+  }
+
+  /* iframe 스타일: 화면 비율 유지하며 꽉 채우기 */
+  .video-foreground,
+  .video-foreground iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* 배경 클릭 방지 */
+  }
+
+  /* 화면 비율에 따른 크기 조정 (검은 여백 방지) */
+  @media (min-aspect-ratio: 16/9) {
+    .video-foreground { height: 300%; top: -100%; }
+  }
+  @media (max-aspect-ratio: 16/9) {
+    .video-foreground { width: 300%; left: -100%; }
+  }
+</style>
+    </head>    
+    <body>
+        브라우저에 표기되는것들이 들가가는 영역<br/>
+        텍스트,이미지,동영상
+        그림을 삽입할려면..img태그를 사용해서 처리해야함
+        글자도 일종의 그림문자이므로 글옆에 공간이있으면
+        옆으로배치된다        
+        <img width="30px" src="./삼겹살.jpg" alt="삼겹살사진">
+        엔터를 쳐도 줄바꿈은 되지않는다-<b>인라인요소</b>
+        <h1>제목글</h1>
+        <div class="video-background">
+    <div class="video-foreground">
+      <iframe 
+        src="https://www.youtube.com/embed/rJE6bhVUNhk?autoplay=1&mute=1&controls=0&loop=1&playlist=rJE6bhVUNhk&showinfo=0&rel=0&iv_load_policy=3&disablekb=1" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+    </body>
+</html>

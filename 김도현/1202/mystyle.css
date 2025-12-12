@@ -1,0 +1,18 @@
+/* 
+id -> #id
+class -> .class 
+*/
+
+li{list-style: none;}
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+#gnb > .wrap{
+    /* 
+    ul태그를 display flex로 변경함
+    자식들아 가로로 줄맞춰 서
+     */
+    display: flex;
+}
