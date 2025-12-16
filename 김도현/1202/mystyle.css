@@ -9,10 +9,26 @@ ul{
     margin: 0;
 }
 
-#gnb > .wrap{
+#gnb> .wrap{
     /* 
     ul태그를 display flex로 변경함
     자식들아 가로로 줄맞춰 서
      */
+    display: flex;
+}
+/* left, right 의 부모 */
+header > .wrap{
+    /* flex 자식 정렬,배치 */
+    display: flex;
+    justify-content: space-between;
+
+
+    width: 960px;
+    margin: 0 auto;
+
+}
+
+header > .wrap > .left,
+header > .wrap > .right{
     display: flex;
 }
