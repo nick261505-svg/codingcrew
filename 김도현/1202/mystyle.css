@@ -3,21 +3,25 @@ id -> #id
 class -> .class 
 */
 
-li{list-style: none;}
-ul{
+li {
+    list-style: none;
+}
+
+ul {
     padding: 0;
     margin: 0;
 }
 
-#gnb> .wrap{
+#gnb>.wrap {
     /* 
     ul태그를 display flex로 변경함
     자식들아 가로로 줄맞춰 서
      */
     display: flex;
 }
+
 /* left, right 의 부모 */
-header > .wrap{
+header>.wrap {
     /* flex 자식 정렬,배치 */
     display: flex;
     justify-content: space-between;
@@ -28,7 +32,28 @@ header > .wrap{
 
 }
 
-header > .wrap > .left,
-header > .wrap > .right{
+header>.wrap>.left,
+header>.wrap>.right {
     display: flex;
 }
+
+/* ######*/
+/* main */
+#visual > .wrap > .imgs > .img > a{
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: center;
+    align-items: center;
+    width: 1920px;
+    height: 534px;
+}
+#visual > .wrap > .imgs > .img01 > a {
+    background-image: url(./images/naver01.png);
+}
+
+#visual > .wrap > .imgs > .img02 > a {
+    background-image: url(./images/naver02.png);
+}
+
+
+/* ------ */
